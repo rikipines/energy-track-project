@@ -38,33 +38,156 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 This is a React-based application for managing devices, calculating their daily, weekly, and monthly costs based on power usage. The system allows users to add new devices, update their power consumption and usage hours, and view the associated cost calculations.
 
-## Features
-- **Add New Device**: Users can add new devices with their name, power consumption, and daily usage hours.
-- **Automatic Cost Calculations**: The system automatically calculates the daily, weekly, and monthly costs for each device based on the provided data.
-- **Editable Device Information**: Users can update the daily usage hours for a device, which will automatically update the associated costs.
-- **Persistent Data**: Data is stored and updated on the server, with the UI automatically refreshing after updates.
+# Energy Usage Manager 📊⚡
 
-## Tech Stack
-- **Frontend**: React, Tailwind CSS
-- **Backend**: Node.js, MongoDB (for storing device data)
-- **Data Fetching**: SWR (for server-side data fetching)
-- **State Management**: React hooks
-- **Cost Calculations**: Custom utility functions for calculating daily, weekly, and monthly costs
-- **Popup UI**: Custom popup for adding and editing devices
-- **Notifications**: SweetAlert2 for error and success messages
+Welcome to the **Energy Usage Manager**!  
+This application is designed to help users track energy consumption for their household devices, calculate costs, and make informed decisions to optimize power usage. By simply entering device details and usage hours, you can get an instant breakdown of daily, weekly, and monthly costs.
 
-## Installation
+---
 
-To get started with this project locally, follow these steps:
+## 🌟 Features
+
+- **Add and Manage Devices**: Easily add, update, or delete devices from the tracking list.
+- **Real-Time Cost Calculations**: See immediate updates to costs as you adjust daily usage hours.
+- **User-Friendly Interface**: Minimalistic and responsive design for an intuitive experience.
+- **Detailed Insights**: Breakdowns of energy usage and costs by day, week, and month.
+
+---
+
+## 🛠️ Technologies
+
+The system leverages the following technologies for a seamless user experience and robust backend:
+
+- **Frontend**: React with TypeScript
+- **Backend**: Node.js and Express.js
+- **Database**: MongoDB Atlas
+- **UI Framework**: Tailwind CSS
+- **Data Handling**: SWR for efficient server synchronization
+- **Alerts**: SweetAlert2 for interactive notifications
+
+---
+
+## 📊 Cost Calculation Overview
+
+The application calculates energy costs using the following formulas:
+
+1. **Daily Cost**:  
+   \[
+   \text{Daily Cost} = \text{Power (W)} \times \text{Daily Usage Hours} \times 0.001 \times \text{Electricity Rate (₪/kWh)}
+   \]
+
+2. **Weekly Cost**:  
+   \[
+   \text{Weekly Cost} = \text{Daily Cost} \times 7
+   \]
+
+3. **Monthly Cost**:  
+   \[
+   \text{Monthly Cost} = \text{Daily Cost} \times 30
+   \]
+
+- **Electricity Rate** is configurable via environment variables and defaults to **0.5 ₪/kWh**.
+
+---
+
+## 🚀 Getting Started
+
+Follow these steps to set up and run the project on your local machine:
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- npm (v7 or higher)
 
-### Steps
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [MongoDB Atlas](https://www.mongodb.com/) or a local MongoDB instance
 
-1. Clone the repository:
+### Installation
+
+1. **Clone the Repository**;
    ```bash
-   git clone https://github.com/rikipines/energy-track-project.git
+   git clone https://github.com/YourUsername/Energy-Usage-Manager.git
+   cd Energy-Usage-Manager
+2. **Install Dependencies**:
+   npm install
+3. **Set Up Environment Variables**:
+Create a .env file in the root folder and configure the following:
+ env
+Copy code
+    ```bash
+     MONGODB_URI=mongodb+srv://rivka0556787531:P8HZdq2cwZ8OyJC0@rivka-project-db.imszo.mongodb.net/?retryWrites=true&w=majority
+4. **Run the Application**:
+Start the backend server:
+    ```bash  
+    npm run server
+Start the frontend application:
+    ```bash
+    npm run dev
+5. **Access the Application**:
+
+Frontend: http://localhost:3000
+API Endpoints: http://localhost:5000/api
+
+
+
+### 🖥️ Application Usage
+**Adding a New Device**
+1. Open the application and click "Add Device."
+2. Enter the following details:
+ Name: Descriptive name for the device (e.g., "Air Conditioner").
+ Power (W): The power consumption of the device in watts.
+ Daily Usage Hours: The number of hours the device operates daily.
+ Click "Add" to include the device in the list.
+**Updating a Device**
+1. Locate the device in the table.
+2. Edit the Daily Usage Hours directly.
+3. All costs (daily, weekly, monthly) will update instantly.
+**Deleting a Device**
+1. Click the delete button next to the device.
+2. Confirm the action in the pop-up alert.
+
+### 📂 Project Structure
+/Energy-Usage-Manager
+├── /components        # Reusable React components
+├── /models            # TypeScript models (e.g., Device)
+├── /pages             # Main application pages
+├── /api               # Backend API routes
+├── /utils             # Utility functions (e.g., cost calculations)
+├── /styles            # Tailwind CSS and global styles
+└── .env               # Environment variables
+**Key Files**
+DeviceTable.tsx: Displays all devices and cost calculations.
+AddDevicePopup.tsx: Modal for adding new devices.
+api/devices.ts: CRUD operations for device data.
+utils/calculations.ts: Handles all cost calculations.
+### 📊 API Endpoints
+Method	Endpoint	Description
+GET	/api/devices	Fetch all devices
+POST	/api/devices	Add a new device
+PUT	/api/devices	Update an existing device
+DELETE	/api/devices	Delete a device
+### 🌟 Contributing
+  We welcome contributions to this project! To contribute:
+1. Fork the Repository: Fork this repository.
+2. Create a Branch:
+  ```bash
+  v Copy code
+   git checkout -b feature-name
+3. Make Changes and Commit
+   ```bash
+    git commit -m "Add your feature"
+4. Push to Your Fork:
+    ```bash
+    git push origin feature-name
+5. Submit a Pull Request.
+### 📜 License
+This project is licensed under the MIT License. Feel free to use, modify, and distribute it as needed.
+
+### 🛡️ Acknowledgments
+React for frontend framework
+MongoDB Atlas for database storage
+Tailwind CSS for styling
+SWR for efficient data fetching
+SweetAlert2 for user-friendly alerts
+markdown
+Copy code
+
 
 
