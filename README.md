@@ -110,16 +110,15 @@ Follow these steps to set up and run the project on your local machine:
 3. **Set Up Environment Variables**:
 Create a .env file in the root folder and configure the following:
  env
-Copy code
     ```bash
      MONGODB_URI=mongodb+srv://rivka0556787531:P8HZdq2cwZ8OyJC0@rivka-project-db.imszo.mongodb.net/?retryWrites=true&w=majority
 4. **Run the Application**:
-Start the backend server:
-    ```bash  
-    npm run server
-Start the frontend application:
-    ```bash
-    npm run dev
+-  Start the backend server:
+       ```bash  
+      npm run server
+-  Start the frontend application:
+      ```bash
+      npm run dev
 5. **Access the Application**:
 
 Frontend: http://localhost:3000
@@ -153,10 +152,10 @@ API Endpoints: http://localhost:5000/api
 ├── /styles            # Tailwind CSS and global styles
 └── .env               # Environment variables
 **Key Files**
-DeviceTable.tsx: Displays all devices and cost calculations.
-AddDevicePopup.tsx: Modal for adding new devices.
-api/devices.ts: CRUD operations for device data.
-utils/calculations.ts: Handles all cost calculations.
+- DeviceTable.tsx: Displays all devices and cost calculations.
+- AddDevicePopup.tsx: Modal for adding new devices.
+- api/devices.ts: CRUD operations for device data.
+- utils/calculations.ts: Handles all cost calculations.
 ### 📊 API Endpoints
 Method	Endpoint	Description
 GET	/api/devices	Fetch all devices
@@ -167,27 +166,26 @@ DELETE	/api/devices	Delete a device
   We welcome contributions to this project! To contribute:
 1. Fork the Repository: Fork this repository.
 2. Create a Branch:
-  ```bash
-  v Copy code
-   git checkout -b feature-name
-3. Make Changes and Commit
    ```bash
+    git checkout -b feature-name
+3. Make Changes and Commit
+    ```bash
     git commit -m "Add your feature"
 4. Push to Your Fork:
-    ```bash
-    git push origin feature-name
+   ```bash
+     git push origin feature-name
 5. Submit a Pull Request.
 ### 📜 License
 This project is licensed under the MIT License. Feel free to use, modify, and distribute it as needed.
 
 ### 🛡️ Acknowledgments
-React for frontend framework
-MongoDB Atlas for database storage
-Tailwind CSS for styling
-SWR for efficient data fetching
-SweetAlert2 for user-friendly alerts
-markdown
-Copy code
+- React for frontend framework
+- MongoDB Atlas for database storage
+- Tailwind CSS for styling
+- SWR for efficient data fetching
+- SweetAlert2 for user-friendly alerts
+- markdown
+- Copy code
 
 
 
